@@ -21,3 +21,17 @@ Last Name
 Email Address
 Phone Number
 
+## Plus Button
+
+
+
+## Print Button
+
+
+
+## Save CV Button
+
+
+
+## Styles
+

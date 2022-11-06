@@ -10,30 +10,48 @@
   </head>
   <body>
     <div class="wrapper" id="wrapper">
+      <h1>CV Builder</h1>
       <div class="formSection" id="formSection">
         <div class="personalInformation" id="personalInformation">
-          <form action="#">
-            <label for="fname">First Name: </label>
-            <input type="text" name="fname" class="fname" id="fname" />
-            <label for="lname">Last Name: </label>
-            <input type="text" name="lname" class="lname" id="lname" />
-            <label for="emailAddress">Email Address: </label>
+          <form action="" method="">
+            <label for="fnameInput">First Name: </label>
+            <input
+              type="text"
+              name="fnameInput"
+              class="fnameInput"
+              id="fnameInput"
+            />
+            <label for="lnameInput">Last Name: </label>
+            <input
+              type="text"
+              name="lnameInput"
+              class="lnameInput"
+              id="lnameInput"
+            />
+            <label for="emailAddressInput">Email Address: </label>
             <input
               type="email"
-              name="emailAddress"
-              class="emailAddress"
-              id="emailAddress"
+              name="emailAddressInput"
+              class="emailAddressInput"
+              id="emailAddressInput"
             />
-            <label for="phoneNumber">Phone Number: </label>
+            <label for="phoneNumberInput">Phone Number: </label>
             <input
               type="number"
-              name="phoneNumber"
-              class="phoneNumber"
-              id="phoneNumber"
+              name="phoneNumberInput"
+              class="phoneNumberInput"
+              id="phoneNumberInput"
             />
-            <input type="submit" value="Submit" />
+            <button type="button" class="submit" id="submit">Submit</button>
           </form>
         </div>
+      </div>
+      <div class="displayOutputSection" id="displayOutputSection">
+        <h2>Curriculum Vitae</h2>
+        <p class="fnameOutput" id="fnameOutput">First Name</p>
+        <p class="lnameOutput" id="lnameOutput">Last Name</p>
+        <p class="emailAddressOutput" id="emailAddressOutput">Email Address</p>
+        <p class="phoneNumberOutput" id="phoneNumberOutput">Phone Number</p>
       </div>
     </div>
   </body>
