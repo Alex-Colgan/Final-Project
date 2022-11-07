@@ -13,7 +13,12 @@
       <h1>CV Builder</h1>
       <div class="formSection" id="formSection">
         <div class="personalInformation" id="personalInformation">
-          <form action="" method="">
+          <form
+            action=""
+            method=""
+            class="personalInformationForm"
+            id="personalInformationForm"
+          >
             <label for="fnameInput">First Name: </label>
             <input
               type="text"
@@ -35,6 +40,10 @@
               class="emailAddressInput"
               id="emailAddressInput"
             />
+            <span
+              class="newEmailAddressInputHere"
+              id="newEmailAddressInputHere"
+            ></span>
             <label for="phoneNumberInput">Phone Number: </label>
             <input
               type="number"
@@ -44,10 +53,20 @@
             />
             <button type="button" class="submit" id="submit">Submit</button>
           </form>
+          <span>
+            <button
+              type="button"
+              onclick="addNewEmailInput()"
+              class="addNewEmailInput"
+              id="addNewEmailInput"
+            >
+              Add Additional Email
+            </button>
+          </span>
         </div>
       </div>
+      <h2>Curriculum Vitae</h2>
       <div class="displayOutputSection" id="displayOutputSection">
-        <h2>Curriculum Vitae</h2>
         <p class="fnameOutput" id="fnameOutput">First Name</p>
         <p class="lnameOutput" id="lnameOutput">Last Name</p>
         <p class="emailAddressOutput" id="emailAddressOutput">Email Address</p>

@@ -24,3 +24,54 @@ input1.addEventListener("click", (e) => {
     phoneNumberOutput.innerHTML = phoneNumber;
   }
 });
+
+function addNewEmailInput() {
+  const newEmailAddressInputLabel = document.createElement("label");
+  newEmailAddressInputLabel.for = "newEmailAddressInput";
+  newEmailAddressInputLabel.innerHTML = "Email Address: ";
+  const newEmailAddressInput = document.createElement("input");
+  newEmailAddressInput.name = "newEmailAddressInput";
+  newEmailAddressInput.type = "email";
+  newEmailAddressInput.className = "newEmailAddressInput";
+  newEmailAddressInput.id = "newEmailAddressInput";
+
+  const newEmailAddressOutput = document.createElement("p");
+  newEmailAddressOutput.className = "newEmailAddressOutput";
+  newEmailAddressOutput.id = "newEmailAddressOutput";
+  document
+    .getElementById("emailAddressOutput")
+    .appendChild(newEmailAddressOutput);
+
+  let emailInputFields = document.getElementsByClassName(
+    "newEmailAddressInput"
+  );
+  if (emailInputFields.length <= 2) {
+    document
+      .getElementById("newEmailAddressInputHere")
+      .appendChild(newEmailAddressInputLabel);
+    document
+      .getElementById("newEmailAddressInputHere")
+      .appendChild(newEmailAddressInput);
+    let input2 = document.getElementById("submit");
+    input2.addEventListener("click", (e) => {
+      emailAddress = newEmailAddressInput.value;
+      newEmailAddressOutput.innerHTML = emailAddress;
+    });
+  } else {
+    alert("Please limit to three.");
+  }
+}
+
+//const newEmailAddressInputSubmit = document.createElement("button");
+//newEmailAddressInputSubmit.type = "button";
+//newEmailAddressInputSubmit.className =
+
+//const newEmailAddressOutput = document.createElement("p");
+//newEmailAddressOutput.className = "newEmailAddressOutput";
+//newEmailAddressOutput.id = "newEmailAddressOutput";
+//document.getElementById("emailAddressOutput").appendChild(newEmailAddressOutput);
+
+//document.getElementById('log').innerHTML += '<br>Some new content!';
+//document.getElementById('log').innerHTML = "text";
+//document.getElementById('log').innerText = "text";
+//document.getElementById('log').textContent = "text";
