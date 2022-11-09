@@ -22,7 +22,14 @@ input1.addEventListener("click", (e) => {
     lnameOutput.innerHTML = lname;
     emailAddressOutput.innerHTML = emailAddress;
     phoneNumberOutput.innerHTML = phoneNumber;
+
+    localStorage.setItem("fnameOutputLocalStorage", fnameOutput.innerHTML);
+    
   }
+});
+
+window.addEventListener("load", () => {
+  document.getElementById("fnameOutput").innerHTML = localStorage.getItem("fnameOutputLocalStorage");
 });
 
 function addNewEmailInput() {
@@ -35,13 +42,6 @@ function addNewEmailInput() {
   newEmailAddressInput.className = "newEmailAddressInput";
   newEmailAddressInput.id = "newEmailAddressInput";
 
-  const newEmailAddressOutput = document.createElement("p");
-  newEmailAddressOutput.className = "newEmailAddressOutput";
-  newEmailAddressOutput.id = "newEmailAddressOutput";
-  document
-    .getElementById("emailAddressOutput")
-    .appendChild(newEmailAddressOutput);
-
   let emailInputFields = document.getElementsByClassName(
     "newEmailAddressInput"
   );
@@ -52,26 +52,78 @@ function addNewEmailInput() {
     document
       .getElementById("newEmailAddressInputHere")
       .appendChild(newEmailAddressInput);
+
+    const newEmailAddressOutput = document.createElement("p");
+    newEmailAddressOutput.className = "newEmailAddressOutput";
+    newEmailAddressOutput.id = "newEmailAddressOutput";
+    // newEmailAddressOutput.innerHTML = "Email Address";
+    document
+      .getElementById("newEmailAddressOutputHere")
+      .appendChild(newEmailAddressOutput);
+
     let input2 = document.getElementById("submit");
     input2.addEventListener("click", (e) => {
-      emailAddress = newEmailAddressInput.value;
-      newEmailAddressOutput.innerHTML = emailAddress;
+      let newEmailAddress = newEmailAddressInput.value;
+      newEmailAddressOutput.innerHTML = newEmailAddress;
     });
   } else {
     alert("Please limit to three.");
   }
 }
 
-//const newEmailAddressInputSubmit = document.createElement("button");
-//newEmailAddressInputSubmit.type = "button";
-//newEmailAddressInputSubmit.className =
+function addNewPhoneNumberInput() {
+  const newPhoneNumberInputLabel = document.createElement("label");
+  newPhoneNumberInputLabel.for = "newPhoneNumberInput";
+  newPhoneNumberInputLabel.innerHTML = "Phone Number: ";
+  const newPhoneNumberInput = document.createElement("input");
+  newPhoneNumberInput.name = "newPhoneNumberInput";
+  newPhoneNumberInput.type = "number";
+  newPhoneNumberInput.className = "newPhoneNumberInput";
+  newPhoneNumberInput.id = "newPhoneNumberInput";
 
-//const newEmailAddressOutput = document.createElement("p");
-//newEmailAddressOutput.className = "newEmailAddressOutput";
-//newEmailAddressOutput.id = "newEmailAddressOutput";
-//document.getElementById("emailAddressOutput").appendChild(newEmailAddressOutput);
+  let phoneNumberInputFields = document.getElementsByClassName(
+    "newPhoneNumberInput"
+  );
+  if (phoneNumberInputFields.length <= 2) {
+    document
+      .getElementById("newPhoneNumberInputHere")
+      .appendChild(newPhoneNumberInputLabel);
+    document
+      .getElementById("newPhoneNumberInputHere")
+      .appendChild(newPhoneNumberInput);
 
-//document.getElementById('log').innerHTML += '<br>Some new content!';
-//document.getElementById('log').innerHTML = "text";
-//document.getElementById('log').innerText = "text";
-//document.getElementById('log').textContent = "text";
+    const newPhoneNumberOutput = document.createElement("p");
+    newPhoneNumberOutput.className = "newPhoneNumberOutput";
+    newPhoneNumberOutput.id = "newPhoneNumberOutput";
+    // newPhoneNumberOutput.innerHTML = "Phone Number";
+    document
+      .getElementById("newPhoneNumberOutputHere")
+      .appendChild(newPhoneNumberOutput);
+
+    let input2 = document.getElementById("submit");
+    input2.addEventListener("click", (e) => {
+      let newPhoneNumber = newPhoneNumberInput.value;
+      newPhoneNumberOutput.innerHTML = newPhoneNumber;
+    });
+  } else {
+    alert("Please limit to three.");
+  }
+}
+
+function printDiv(divName) {
+  var printContents = document.getElementById(divName).innerHTML;
+  var originalContents = document.body.innerHTML;
+  document.body.innerHTML = printContents;
+  window.print();
+  document.body.innerHTML = originalContents;
+}
+
+window.addEventListener("load", () => {
+  let fnameInput = document.querySelector("#fnameInput");
+  let fnameInputLocalStorage =
+    localStorage.getItem("fnameInputLocalStorage") || "";
+  fnameInput.value = fnameInputLocalStorage;
+  fnameInput.addEventListener("change", (e) => {
+    localStorage.setItem("fnameInputLocalStorage", e.target.value);
+  });
+});

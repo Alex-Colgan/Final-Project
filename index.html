@@ -12,7 +12,10 @@
     <div class="wrapper" id="wrapper">
       <h1>CV Builder</h1>
       <div class="formSection" id="formSection">
-        <div class="personalInformation" id="personalInformation">
+        <div
+          class="personalInformationFormSection"
+          id="personalInformationFormSection"
+        >
           <form
             action=""
             method=""
@@ -51,6 +54,10 @@
               class="phoneNumberInput"
               id="phoneNumberInput"
             />
+            <span
+              class="newPhoneNumberInputHere"
+              id="newPhoneNumberInputHere"
+            ></span>
             <button type="button" class="submit" id="submit">Submit</button>
           </form>
           <span>
@@ -63,14 +70,46 @@
               Add Additional Email
             </button>
           </span>
+          <span>
+            <button
+              type="button"
+              onclick="addNewPhoneNumberInput()"
+              class="addNewPhoneNumberInput"
+              id="addNewPhoneNumberInput"
+            >
+              Add Additional Phone Number
+            </button>
+          </span>
         </div>
       </div>
-      <h2>Curriculum Vitae</h2>
-      <div class="displayOutputSection" id="displayOutputSection">
-        <p class="fnameOutput" id="fnameOutput">First Name</p>
-        <p class="lnameOutput" id="lnameOutput">Last Name</p>
-        <p class="emailAddressOutput" id="emailAddressOutput">Email Address</p>
-        <p class="phoneNumberOutput" id="phoneNumberOutput">Phone Number</p>
+      <div class="printableArea" id="printableArea">
+        <h2>Curriculum Vitae</h2>
+        <div class="displayOutputSection" id="displayOutputSection">
+          <div
+            class="personalInformationOutputSection"
+            id="personalInformationOutputSection"
+          >
+            <p class="fnameOutput" id="fnameOutput">First Name</p>
+            <p class="lnameOutput" id="lnameOutput">Last Name</p>
+            <p class="emailAddressOutput" id="emailAddressOutput">
+              Email Address
+            </p>
+            <span
+              class="newEmailAddressOutputHere"
+              id="newEmailAddressOutputHere"
+            ></span>
+            <p class="phoneNumberOutput" id="phoneNumberOutput">Phone Number</p>
+            <span
+              class="newPhoneNumberOutputHere"
+              id="newPhoneNumberOutputHere"
+            ></span>
+          </div>
+        </div>
+        <input
+          type="button"
+          onclick="printDiv('printableArea')"
+          value="Print CV"
+        />
       </div>
     </div>
   </body>
