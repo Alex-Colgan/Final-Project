@@ -82,33 +82,43 @@
           </span>
         </div>
       </div>
-      <div class="printableArea" id="printableArea">
-        <h2>Curriculum Vitae</h2>
-        <div class="displayOutputSection" id="displayOutputSection">
-          <div
-            class="personalInformationOutputSection"
-            id="personalInformationOutputSection"
-          >
-            <p class="fnameOutput" id="fnameOutput">First Name</p>
-            <p class="lnameOutput" id="lnameOutput">Last Name</p>
-            <p class="emailAddressOutput" id="emailAddressOutput">
-              Email Address
-            </p>
-            <span
-              class="newEmailAddressOutputHere"
-              id="newEmailAddressOutputHere"
-            ></span>
-            <p class="phoneNumberOutput" id="phoneNumberOutput">Phone Number</p>
-            <span
-              class="newPhoneNumberOutputHere"
-              id="newPhoneNumberOutputHere"
-            ></span>
+      <div class="displaySection" id="displaySection">
+        <div class="printableArea" id="printableArea">
+          <h2>Curriculum Vitae</h2>
+          <div class="displayOutputSection" id="displayOutputSection">
+            <div
+              class="personalInformationOutputSection"
+              id="personalInformationOutputSection"
+            >
+              <p class="fnameOutput" id="fnameOutput">First Name</p>
+              <p class="lnameOutput" id="lnameOutput">Last Name</p>
+              <p class="emailAddressOutput" id="emailAddressOutput">
+                Email Address
+              </p>
+              <span
+                class="newEmailAddressOutputHere"
+                id="newEmailAddressOutputHere"
+              ></span>
+              <p class="phoneNumberOutput" id="phoneNumberOutput">
+                Phone Number
+              </p>
+              <span
+                class="newPhoneNumberOutputHere"
+                id="newPhoneNumberOutputHere"
+              ></span>
+            </div>
           </div>
         </div>
         <input
           type="button"
           onclick="printDiv('printableArea')"
           value="Print CV"
+        />
+        <input type="button" onclick="saveCV()" value="Save CV" />
+        <input
+          type="button"
+          onclick="clearLocalStorage()"
+          value="Delete Save Data"
         />
       </div>
     </div>

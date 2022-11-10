@@ -22,14 +22,7 @@ input1.addEventListener("click", (e) => {
     lnameOutput.innerHTML = lname;
     emailAddressOutput.innerHTML = emailAddress;
     phoneNumberOutput.innerHTML = phoneNumber;
-
-    localStorage.setItem("fnameOutputLocalStorage", fnameOutput.innerHTML);
-    
   }
-});
-
-window.addEventListener("load", () => {
-  document.getElementById("fnameOutput").innerHTML = localStorage.getItem("fnameOutputLocalStorage");
 });
 
 function addNewEmailInput() {
@@ -41,6 +34,8 @@ function addNewEmailInput() {
   newEmailAddressInput.type = "email";
   newEmailAddressInput.className = "newEmailAddressInput";
   newEmailAddressInput.id = "newEmailAddressInput";
+
+// store p in a variable and use a for loop for localStorage.
 
   let emailInputFields = document.getElementsByClassName(
     "newEmailAddressInput"
@@ -118,12 +113,44 @@ function printDiv(divName) {
   document.body.innerHTML = originalContents;
 }
 
+// Function to save input fields to localStorage when user clicks the save button.
+// Thus enabling the user to restore their work and continue where they left off.
+function saveCV() {
+  // Input Fields.
+  localStorage.setItem("fnameInputLocalStorage", fnameInput.value);
+  localStorage.setItem("lnameInputLocalStorage", lnameInput.value);
+  localStorage.setItem("emailAddressInputLocalStorage", emailAddressInput.value);
+  localStorage.setItem("phoneNumberInputLocalStorage", phoneNumberInput.value);
+
+  // Output Fields.
+  localStorage.setItem("fnameOutputLocalStorage", fnameOutput.innerHTML);
+  localStorage.setItem("lnameOutputLocalStorage", lnameOutput.innerHTML);
+  localStorage.setItem("emailAddressOutputLocalStorage", emailAddressOutput.innerHTML);
+  localStorage.setItem("phoneNumberOutputLocalStorage", phoneNumberOutput.innerHTML);
+}
+
+// Input fields are loaded from localStorage on page load.
 window.addEventListener("load", () => {
-  let fnameInput = document.querySelector("#fnameInput");
-  let fnameInputLocalStorage =
-    localStorage.getItem("fnameInputLocalStorage") || "";
-  fnameInput.value = fnameInputLocalStorage;
-  fnameInput.addEventListener("change", (e) => {
-    localStorage.setItem("fnameInputLocalStorage", e.target.value);
-  });
+  fnameInput.value = localStorage.getItem("fnameInputLocalStorage") || "";
+  lnameInput.value = localStorage.getItem("lnameInputLocalStorage") || "";
+  emailAddressInput.value = localStorage.getItem("emailAddressInputLocalStorage") || "";
+  phoneNumberInput.value = localStorage.getItem("phoneNumberInputLocalStorage") || "";
 });
+
+// Output fields are loaded from localStorage on page load.
+window.addEventListener("load", () => {
+  document.getElementById("fnameOutput").innerHTML = localStorage.getItem("fnameOutputLocalStorage") || "First Name";
+  document.getElementById("lnameOutput").innerHTML = localStorage.getItem("lnameOutputLocalStorage") || "Last Name";
+  document.getElementById("emailAddressOutput").innerHTML = localStorage.getItem("emailAddressOutputLocalStorage") || "Email Address";
+  document.getElementById("phoneNumberOutput").innerHTML = localStorage.getItem("phoneNumberOutputLocalStorage") || "Phone Number";
+});
+
+// For/while loop to automate process?
+// Could use .localStorage.length for the key of the key/value pair and then use a for loop to get from localStorage.
+// But returning the values to their correct objects would be interrupted by the addition of new fields by the user.
+// Therefore I will have to manually return the values to their correct object.
+
+// Function removes all data from local storage, allowing the user to begin again with a new CV.
+function clearLocalStorage() {
+  localStorage.clear();
+}
