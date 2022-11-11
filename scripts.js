@@ -76,6 +76,7 @@ function addNewEmailInput() {
     input2.addEventListener("click", (e) => {
       let newEmailAddress = newEmailAddressInput.value;
       newEmailAddressOutput.innerHTML = newEmailAddress;
+      console.log(newEmailAddressOutput);
     });
   } else {
     alert("Please limit to three.");
@@ -152,6 +153,16 @@ function saveCV() {
   );
   localStorage.setItem("phoneNumberInputLocalStorage", phoneNumberInput.value);
 
+  // Newly created input fields.
+  localStorage.setItem(
+    "newEmailAddressInputLocalStorage",
+    newEmailAddressInput.value
+  );
+  localStorage.setItem(
+    "newPhoneNumberInputLocalStorage",
+    newPhoneNumberInput.value
+  );
+
   // Output Fields.
   localStorage.setItem("fnameOutputLocalStorage", fnameOutput.innerHTML);
   localStorage.setItem("lnameOutputLocalStorage", lnameOutput.innerHTML);
@@ -163,6 +174,16 @@ function saveCV() {
     "phoneNumberOutputLocalStorage",
     phoneNumberOutput.innerHTML
   );
+
+  // Newly created output fields.
+  localStorage.setItem(
+    "newEmailAddressOutputLocalStorage",
+    newEmailAddressOutput.innerHTML
+  );
+  localStorage.setItem(
+    "newPhoneNumberOutputLocalStorage",
+    newPhoneNumberOutput.innerHTML
+  );
 }
 
 // Input fields are loaded from localStorage on page load.
@@ -173,6 +194,12 @@ window.addEventListener("load", () => {
     localStorage.getItem("emailAddressInputLocalStorage") || "";
   phoneNumberInput.value =
     localStorage.getItem("phoneNumberInputLocalStorage") || "";
+
+  // Newly created input fields.
+  newEmailAddressInput.value =
+    localStorage.getItem("newEmailAddressInputLocalStorage") || "";
+  newPhoneNumberInput.value =
+    localStorage.getItem("newPhoneNumberInputLocalStorage") || "";
 });
 
 // Output fields are loaded from localStorage on page load.
@@ -185,7 +212,67 @@ window.addEventListener("load", () => {
     localStorage.getItem("emailAddressOutputLocalStorage") || "Email Address";
   document.getElementById("phoneNumberOutput").innerHTML =
     localStorage.getItem("phoneNumberOutputLocalStorage") || "Phone Number";
+
+  // Newly created output fields.
+  document.getElementById("newEmailAddressOutput").innerHTML =
+    localStorage.getItem("newEmailAddressOutputLocalStorage") ||
+    "Email Address";
+  document.getElementById("newPhoneNumberOutput").innerHTML =
+    localStorage.getItem("newPhoneNumberOutputLocalStorage") || "Phone Number";
 });
+
+if (localStorage.getItem("newEmailAddressInputLocalStorage") !== null) {
+  const newEmailAddressInputLabel = document.createElement("label");
+  newEmailAddressInputLabel.for = "newEmailAddressInput";
+  newEmailAddressInputLabel.innerHTML = "Email Address: ";
+  const newEmailAddressInput = document.createElement("input");
+  newEmailAddressInput.name = "newEmailAddressInput";
+  newEmailAddressInput.type = "email";
+  newEmailAddressInput.className = "newEmailAddressInput";
+  newEmailAddressInput.id = "newEmailAddressInput";
+
+  document
+    .getElementById("newEmailAddressInputHere")
+    .appendChild(newEmailAddressInputLabel);
+  document
+    .getElementById("newEmailAddressInputHere")
+    .appendChild(newEmailAddressInput);
+
+  const newEmailAddressOutput = document.createElement("p");
+  newEmailAddressOutput.className = "newEmailAddressOutput";
+  newEmailAddressOutput.id = "newEmailAddressOutput";
+
+  document
+    .getElementById("newEmailAddressOutputHere")
+    .appendChild(newEmailAddressOutput);
+}
+
+if (localStorage.getItem("newPhoneNumberInputLocalStorage") !== null) {
+  const newPhoneNumberInputLabel = document.createElement("label");
+  newPhoneNumberInputLabel.for = "newPhoneNumberInput";
+  newPhoneNumberInputLabel.innerHTML = "Phone Number: ";
+  const newPhoneNumberInput = document.createElement("input");
+  newPhoneNumberInput.name = "newPhoneNumberInput";
+  newPhoneNumberInput.type = "number";
+  newPhoneNumberInput.className = "newPhoneNumberInput";
+  newPhoneNumberInput.id = "newPhoneNumberInput";
+
+  document
+    .getElementById("newPhoneNumberInputHere")
+    .appendChild(newPhoneNumberInputLabel);
+  document
+    .getElementById("newPhoneNumberInputHere")
+    .appendChild(newPhoneNumberInput);
+
+  const newPhoneNumberOutput = document.createElement("p");
+  newPhoneNumberOutput.className = "newPhoneNumberOutput";
+  newPhoneNumberOutput.id = "newPhoneNumberOutput";
+
+  document
+    .getElementById("newPhoneNumberOutputHere")
+    .appendChild(newPhoneNumberOutput);
+}
+
 
 // Function removes all data from local storage, allowing the user to begin again with a new CV.
 function clearLocalStorage() {
@@ -198,28 +285,14 @@ function clearLocalStorage() {
 // But returning the values to their correct objects would be interrupted by the addition of new fields by the user.
 // Therefore I will have to manually return the values to their correct object.
 
-function saveNewFields() {
-  localStorage.setItem(
-    "newEmailAddressInputLocalStorage",
-    newEmailAddressInput.value
-  );
-  localStorage.setItem(
-    "newEmailAddressOutputLocalStorage",
-    newEmailAddressOutput.innerHTML
-  );
-}
-
-window.addEventListener("load", () => {
-  newEmailAddressInput.value =
-    localStorage.getItem("newEmailAddressInputLocalStorage") || "";
-});
-
-window.addEventListener("load", () => {
-  document.getElementById("newEmailAddressOutput").innerHTML =
-    localStorage.getItem("newEmailAddressOutputLocalStorage") ||
-    "Email Address";
-});
-
 // Could use onChange or onCreate? if it exists instead of onload.
 // Or could put the whole function in an if else statement to check against local storage and
 // if local storage is present then create the elements and fill them.
+
+// Problem is still storing multiple of a single element value in localStorage.
+// Perhaps we could store the values in an array and target each index.
+
+// Backup plan is to reduce the number of additional fields per type to one.
+// Still need to write out the rest of the form and do the CSS styling.
+// Would like half a week each on writing the rest of the form and output and writing the CSS.
+

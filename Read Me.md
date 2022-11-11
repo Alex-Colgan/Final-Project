@@ -37,8 +37,9 @@ Decided instead to create new elements.
 Many searches suggested using jquery. However I have decided not to use any libraries in order to show my understanding of all the concepts in this project.
 
 Current bugs:
--addNewEmailInput button does not work if it is placed within the form html.
+-addNewEmailInput button does not work if it is placed within the form.
 -additional email inputs do not display if there is text in the original field. (Fixed).
+-
 
 ## Print Button
 
@@ -50,7 +51,12 @@ Am currently investigating localStorage usage. Trying to find a way to save lots
 
 Currently all objects retrieve from local storage on change and on load. Will need to update this so that it works with a button.
 
+Updates to this file Needed!
 
+Current bugs:
+-More than one additional email or phone number is not saved correctly to local storage and displays as undefined on page load.
+
+For restoring user info, could remove page load functionality and instead use a button. 
 
 ## Styles
 
