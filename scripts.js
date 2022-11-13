@@ -273,7 +273,6 @@ if (localStorage.getItem("newPhoneNumberInputLocalStorage") !== null) {
     .appendChild(newPhoneNumberOutput);
 }
 
-
 // Function removes all data from local storage, allowing the user to begin again with a new CV.
 function clearLocalStorage() {
   localStorage.clear();
@@ -292,7 +291,17 @@ function clearLocalStorage() {
 // Problem is still storing multiple of a single element value in localStorage.
 // Perhaps we could store the values in an array and target each index.
 
+// Could also store in localStorage as an array using this method:
+// const myBlogs = ["https://catalins.tech", "https://exampleblog.com"];
+// localStorage.setItem('links', JSON.stringify(myBlogs));
+// const storedBlogs = JSON.parse(localStorage.getItem('links'));
+
 // Backup plan is to reduce the number of additional fields per type to one.
 // Still need to write out the rest of the form and do the CSS styling.
 // Would like half a week each on writing the rest of the form and output and writing the CSS.
 
+// Add second email / add third etc. X
+// Builder/factory function.
+// Use onchange or onblur.
+// Class with a constructor.
+// Investigate object oriented programming. But time box it. And create a branch from your code on gitHub.
