@@ -1,9 +1,30 @@
 .wrapper {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .personalInformationForm {
     display: flex;
     flex-direction: column;
+}
+
+.workExperienceForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.educationForm {
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        flex-direction: column;
+    }
 }

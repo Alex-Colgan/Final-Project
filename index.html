@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <h1>CV Builder</h1>
     <div class="wrapper" id="wrapper">
-      <h1>CV Builder</h1>
       <div class="formSection" id="formSection">
         <div
           class="personalInformationFormSection"
@@ -22,6 +22,7 @@
             class="personalInformationForm"
             id="personalInformationForm"
           >
+            <h2>Please input your details here:</h2>
             <label for="fnameInput">First Name: </label>
             <input
               type="text"
@@ -81,11 +82,128 @@
             </button>
           </span>
         </div>
+        <div class="workExperienceFormSection" id="workExperienceFormSection">
+          <form
+            action=""
+            method=""
+            class="workExperienceForm"
+            id="workExperienceForm"
+          >
+            <label for="jobTitle1Input">Job Title: </label>
+            <input
+              type="text"
+              name="jobTitle1Input"
+              class="jobTitle1Input"
+              id="jobTitle1Input"
+            />
+            <label for="jobDuties1Input">Duties: </label>
+            <input
+              type="text"
+              name="jobDuties1Input"
+              class="jobDuties1Input"
+              id="jobDuties1Input"
+            />
+            <label for="jobTitle2Input">Job Title: </label>
+            <input
+              type="text"
+              name="jobTitle2Input"
+              class="jobTitle2Input"
+              id="jobTitle2Input"
+            />
+            <label for="jobDuties2Input">Duties: </label>
+            <input
+              type="text"
+              name="jobDuties2Input"
+              class="jobDuties2Input"
+              id="jobDuties2Input"
+            />
+            <button type="button" class="submit3" id="submit3">Submit</button>
+          </form>
+        </div>
+        <div class="educationFormSection" id="educationFormSection">
+          <form action="" method="" class="educationForm" id="educationForm">
+            <label for="educationLevel1Input">Education level: </label>
+            <input
+              type="text"
+              name="educationLevel1Input"
+              class="educationLevel1Input"
+              id="educationLevel1Input"
+            />
+            <label for="educationResults1Input">Results: </label>
+            <input
+              type="text"
+              name="educationResults1Input"
+              class="educationResults1Input"
+              id="educationResults1Input"
+            />
+            <label for="educationLocation1Input">Institution: </label>
+            <input
+              type="text"
+              name="educationLocation1Input"
+              class="educationLocation1Input"
+              id="educationLocation1Input"
+            />
+            <label for="educationDates1Input">Dates: </label>
+            <input
+              type="text"
+              name="educationDates1Input"
+              class="educationDates1Input"
+              id="educationDates1Input"
+            />
+            <label for="educationLevel2Input">Education level: </label>
+            <input
+              type="text"
+              name="educationLevel2Input"
+              class="educationLevel2Input"
+              id="educationLevel2Input"
+            />
+            <label for="educationResults2Input">Results: </label>
+            <input
+              type="text"
+              name="educationResults2Input"
+              class="educationResults2Input"
+              id="educationResults2Input"
+            />
+            <label for="educationLocation2Input">Institution: </label>
+            <input
+              type="text"
+              name="educationLocation2Input"
+              class="educationLocation2Input"
+              id="educationLocation2Input"
+            />
+            <label for="educationDates2Input">Dates: </label>
+            <input
+              type="text"
+              name="educationDates2Input"
+              class="educationDates2Input"
+              id="educationDates2Input"
+            />
+            <button type="button" class="submit4" id="submit4">Submit</button>
+          </form>
+        </div>
+        <div class="personalProfileFormSection" id="personalProfileFormSection">
+          <form
+            action=""
+            method=""
+            class="personalProfileForm"
+            id="personalProfileForm"
+          >
+            <label for="personalProfileDescriptionInput">Description: </label>
+            <input
+              type="text"
+              name="personalProfileDescriptionInput"
+              class="personalProfileDescriptionInput"
+              id="personalProfileDescriptionInput"
+            />
+            <button type="button" class="submit5" id="submit5">Submit</button>
+          </form>
+        </div>
       </div>
       <div class="displaySection" id="displaySection">
+        <h2>Your CV will be displayed here:</h2>
         <div class="printableArea" id="printableArea">
-          <h2>Curriculum Vitae</h2>
           <div class="displayOutputSection" id="displayOutputSection">
+            <h3>Curriculum Vitae</h3>
             <div
               class="personalInformationOutputSection"
               id="personalInformationOutputSection"
@@ -106,6 +224,50 @@
                 class="newPhoneNumberOutputHere"
                 id="newPhoneNumberOutputHere"
               ></span>
+            </div>
+            <div
+              class="workExperienceOutputSection"
+              id="workExperienceOutputSection"
+            >
+              <p class="jobTitle1Output" id="jobTitle1Output">Job Title</p>
+              <p class="jobDuties1Output" id="jobDuties1Output">Duties</p>
+              <p class="jobTitle2Output" id="jobTitle2Output"></p>
+              <p class="jobDuties2Output" id="jobDuties2Output"></p>
+            </div>
+            <div class="educationOutputSection" id="educationOutputSection">
+              <p class="educationLevel1Output" id="educationLevel1Output">
+                Education level
+              </p>
+              <p class="educationResults1Output" id="educationResults1Output">
+                Results
+              </p>
+              <p class="educationLocation1Output" id="educationLocation1Output">
+                Institution
+              </p>
+              <p class="educationDates1Output" id="educationDates1Output">
+                Dates
+              </p>
+              <p class="educationLevel2Output" id="educationLevel2Output"></p>
+              <p
+                class="educationResults2Output"
+                id="educationResults2Output"
+              ></p>
+              <p
+                class="educationLocation2Output"
+                id="educationLocation2Output"
+              ></p>
+              <p class="educationDates2Output" id="educationDates2Output"></p>
+            </div>
+            <div
+              class="personalProfileDescriptionOutputSection"
+              id="personalProfileDescriptionOutputSection"
+            >
+              <p
+                class="personalProfileDescriptionOutput"
+                id="personalProfileDescriptionOutput"
+              >
+                Description
+              </p>
             </div>
           </div>
         </div>

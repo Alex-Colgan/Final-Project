@@ -153,16 +153,6 @@ function saveCV() {
   );
   localStorage.setItem("phoneNumberInputLocalStorage", phoneNumberInput.value);
 
-  // Newly created input fields.
-  localStorage.setItem(
-    "newEmailAddressInputLocalStorage",
-    newEmailAddressInput.value
-  );
-  localStorage.setItem(
-    "newPhoneNumberInputLocalStorage",
-    newPhoneNumberInput.value
-  );
-
   // Output Fields.
   localStorage.setItem("fnameOutputLocalStorage", fnameOutput.innerHTML);
   localStorage.setItem("lnameOutputLocalStorage", lnameOutput.innerHTML);
@@ -173,6 +163,16 @@ function saveCV() {
   localStorage.setItem(
     "phoneNumberOutputLocalStorage",
     phoneNumberOutput.innerHTML
+  );
+
+  // Newly created input fields.
+  localStorage.setItem(
+    "newEmailAddressInputLocalStorage",
+    newEmailAddressInput.value
+  );
+  localStorage.setItem(
+    "newPhoneNumberInputLocalStorage",
+    newPhoneNumberInput.value
   );
 
   // Newly created output fields.
@@ -221,6 +221,8 @@ window.addEventListener("load", () => {
     localStorage.getItem("newPhoneNumberOutputLocalStorage") || "Phone Number";
 });
 
+// if statements which checks if there is data stored in local storage.
+// If localstorage is not empty then it creates and populates the additional email and phone number fields.
 if (localStorage.getItem("newEmailAddressInputLocalStorage") !== null) {
   const newEmailAddressInputLabel = document.createElement("label");
   newEmailAddressInputLabel.for = "newEmailAddressInput";
@@ -305,3 +307,103 @@ function clearLocalStorage() {
 // Use onchange or onblur.
 // Class with a constructor.
 // Investigate object oriented programming. But time box it. And create a branch from your code on gitHub.
+
+let input3 = document.getElementById("submit3");
+input3.addEventListener("click", (e) => {
+  let jobTitle1InputVar = jobTitle1Input.value;
+  let jobDuties1InputVar = jobDuties1Input.value;
+  let jobTitle2InputVar = jobTitle2Input.value;
+  let jobDuties2InputVar = jobDuties2Input.value;
+
+  if (jobTitle1InputVar === "" || jobDuties1InputVar === "") {
+    alert("Please fill in at least one previous role.");
+  } else {
+    let jobTitle1OutputVar = document.getElementById("jobTitle1Output");
+    let jobDuties1OutputVar = document.getElementById("jobDuties1Output");
+    let jobTitle2OutputVar = document.getElementById("jobTitle2Output");
+    let jobDuties2OutputVar = document.getElementById("jobDuties2Output");
+
+    jobTitle1OutputVar.innerHTML = jobTitle1InputVar;
+    jobDuties1OutputVar.innerHTML = jobDuties1InputVar;
+    jobTitle2OutputVar.innerHTML = jobTitle2InputVar;
+    jobDuties2OutputVar.innerHTML = jobDuties2InputVar;
+  }
+});
+
+let input4 = document.getElementById("submit4");
+input4.addEventListener("click", (e) => {
+  let educationLevel1InputVar = educationLevel1Input.value;
+  let educationResults1InputVar = educationResults1Input.value;
+  let educationLocation1InputVar = educationLocation1Input.value;
+  let educationDates1InputVar = educationDates1Input.value;
+  let educationLevel2InputVar = educationLevel2Input.value;
+  let educationResults2InputVar = educationResults2Input.value;
+  let educationLocation2InputVar = educationLocation2Input.value;
+  let educationDates2InputVar = educationDates2Input.value;
+
+  if (
+    educationLevel1InputVar === "" ||
+    educationResults1InputVar === "" ||
+    educationLocation1InputVar === "" ||
+    educationDates1InputVar === ""
+  ) {
+    alert("Please fill in at least one previous education section.");
+  } else {
+    let educationLevel1OutputVar = document.getElementById(
+      "educationLevel1Output"
+    );
+    let educationResults1OutputVar = document.getElementById(
+      "educationResults1Output"
+    );
+    let educationLocation1OutputVar = document.getElementById(
+      "educationLocation1Output"
+    );
+    let educationDates1OutputVar = document.getElementById(
+      "educationDates1Output"
+    );
+    let educationLevel2OutputVar = document.getElementById(
+      "educationLevel2Output"
+    );
+    let educationResults2OutputVar = document.getElementById(
+      "educationResults2Output"
+    );
+    let educationLocation2OutputVar = document.getElementById(
+      "educationLocation2Output"
+    );
+    let educationDates2OutputVar = document.getElementById(
+      "educationDates2Output"
+    );
+
+    educationLevel1OutputVar.innerHTML = educationLevel1InputVar;
+    educationResults1OutputVar.innerHTML = educationResults1InputVar;
+    educationLocation1OutputVar.innerHTML = educationLocation1InputVar;
+    educationDates1OutputVar.innerHTML = educationDates1InputVar;
+    educationLevel2OutputVar.innerHTML = educationLevel2InputVar;
+    educationResults2OutputVar.innerHTML = educationResults2InputVar;
+    educationLocation2OutputVar.innerHTML = educationLocation2InputVar;
+    educationDates2OutputVar.innerHTML = educationDates2InputVar;
+  }
+});
+
+// let input5 = document.getElementById("submit5");
+// input5.addEventListener("click", (e) => {
+//   let personalProfileDescriptionInputVar =
+//     personalProfileDescriptionInput.value;
+
+//   if (personalProfileDescriptionInputVar === "") {
+//     alert("Please add a profile description.");
+//   } else {
+//     let personalProfileDescriptionOutputVar = document.getElementById(
+//       "personalProfileDescriptionOutput"
+//     );
+
+//     personalProfileDescriptionOutputVar.innerHTML =
+//       personalProfileDescriptionInputVar;
+//   }
+// });
+
+let input5 = document.getElementById("submit5");
+input5.addEventListener("click", (e) => {
+  personalProfileDescriptionOutput.innerHTML =
+    personalProfileDescriptionInput.value;
+});
