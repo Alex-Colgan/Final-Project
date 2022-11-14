@@ -52,7 +52,7 @@ function addNewEmailInput() {
   );
 
   // if statement's condition is the number of new email input fields.
-  if (emailInputFields.length <= 2) {
+  if (emailInputFields.length <= 0) {
     // Adding new fields to the proper location in the form.
     document
       .getElementById("newEmailAddressInputHere")
@@ -79,7 +79,7 @@ function addNewEmailInput() {
       console.log(newEmailAddressOutput);
     });
   } else {
-    alert("Please limit to three.");
+    alert("Please limit to one additional email address.");
   }
 }
 
@@ -97,7 +97,7 @@ function addNewPhoneNumberInput() {
   let phoneNumberInputFields = document.getElementsByClassName(
     "newPhoneNumberInput"
   );
-  if (phoneNumberInputFields.length <= 2) {
+  if (phoneNumberInputFields.length <= 0) {
     document
       .getElementById("newPhoneNumberInputHere")
       .appendChild(newPhoneNumberInputLabel);
@@ -119,7 +119,7 @@ function addNewPhoneNumberInput() {
       newPhoneNumberOutput.innerHTML = newPhoneNumber;
     });
   } else {
-    alert("Please limit to three.");
+    alert("Please limit to one additional phone number.");
   }
 }
 

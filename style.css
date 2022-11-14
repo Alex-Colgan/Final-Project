@@ -23,6 +23,14 @@ h1 {
     text-align: center;
 }
 
+.displayOutputSection {
+    border: solid black 1px;
+}
+
+.printableArea {
+    margin: 3vh;
+}
+
 @media only screen and (max-width: 600px) {
     .wrapper {
         flex-direction: column;
