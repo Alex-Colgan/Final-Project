@@ -31,6 +31,111 @@ input1.addEventListener("click", (e) => {
   }
 });
 
+
+
+let input3 = document.getElementById("submit3");
+input3.addEventListener("click", (e) => {
+  let jobTitle1InputVar = jobTitle1Input.value;
+  let jobDuties1InputVar = jobDuties1Input.value;
+  let jobTitle2InputVar = jobTitle2Input.value;
+  let jobDuties2InputVar = jobDuties2Input.value;
+
+  if (jobTitle1InputVar === "" || jobDuties1InputVar === "") {
+    alert("Please fill in at least one previous role.");
+  } else {
+    let jobTitle1OutputVar = document.getElementById("jobTitle1Output");
+    let jobDuties1OutputVar = document.getElementById("jobDuties1Output");
+    let jobTitle2OutputVar = document.getElementById("jobTitle2Output");
+    let jobDuties2OutputVar = document.getElementById("jobDuties2Output");
+
+    jobTitle1OutputVar.innerHTML = jobTitle1InputVar;
+    jobDuties1OutputVar.innerHTML = jobDuties1InputVar;
+    jobTitle2OutputVar.innerHTML = jobTitle2InputVar;
+    jobDuties2OutputVar.innerHTML = jobDuties2InputVar;
+  }
+});
+
+let input4 = document.getElementById("submit4");
+input4.addEventListener("click", (e) => {
+  let educationLevel1InputVar = educationLevel1Input.value;
+  let educationResults1InputVar = educationResults1Input.value;
+  let educationLocation1InputVar = educationLocation1Input.value;
+  let educationDates1InputVar = educationDates1Input.value;
+  let educationLevel2InputVar = educationLevel2Input.value;
+  let educationResults2InputVar = educationResults2Input.value;
+  let educationLocation2InputVar = educationLocation2Input.value;
+  let educationDates2InputVar = educationDates2Input.value;
+
+  if (
+    educationLevel1InputVar === "" ||
+    educationResults1InputVar === "" ||
+    educationLocation1InputVar === "" ||
+    educationDates1InputVar === ""
+  ) {
+    alert("Please fill in at least one previous education section.");
+  } else {
+    let educationLevel1OutputVar = document.getElementById(
+      "educationLevel1Output"
+    );
+    let educationResults1OutputVar = document.getElementById(
+      "educationResults1Output"
+    );
+    let educationLocation1OutputVar = document.getElementById(
+      "educationLocation1Output"
+    );
+    let educationDates1OutputVar = document.getElementById(
+      "educationDates1Output"
+    );
+    let educationLevel2OutputVar = document.getElementById(
+      "educationLevel2Output"
+    );
+    let educationResults2OutputVar = document.getElementById(
+      "educationResults2Output"
+    );
+    let educationLocation2OutputVar = document.getElementById(
+      "educationLocation2Output"
+    );
+    let educationDates2OutputVar = document.getElementById(
+      "educationDates2Output"
+    );
+
+    educationLevel1OutputVar.innerHTML = educationLevel1InputVar;
+    educationResults1OutputVar.innerHTML = educationResults1InputVar;
+    educationLocation1OutputVar.innerHTML = educationLocation1InputVar;
+    educationDates1OutputVar.innerHTML = educationDates1InputVar;
+    educationLevel2OutputVar.innerHTML = educationLevel2InputVar;
+    educationResults2OutputVar.innerHTML = educationResults2InputVar;
+    educationLocation2OutputVar.innerHTML = educationLocation2InputVar;
+    educationDates2OutputVar.innerHTML = educationDates2InputVar;
+  }
+});
+
+// let input5 = document.getElementById("submit5");
+// input5.addEventListener("click", (e) => {
+//   let personalProfileDescriptionInputVar =
+//     personalProfileDescriptionInput.value;
+
+//   if (personalProfileDescriptionInputVar === "") {
+//     alert("Please add a profile description.");
+//   } else {
+//     let personalProfileDescriptionOutputVar = document.getElementById(
+//       "personalProfileDescriptionOutput"
+//     );
+
+//     personalProfileDescriptionOutputVar.innerHTML =
+//       personalProfileDescriptionInputVar;
+//   }
+// });
+
+let input5 = document.getElementById("submit5");
+input5.addEventListener("click", (e) => {
+  personalProfileDescriptionOutput.innerHTML =
+    personalProfileDescriptionInput.value;
+});
+
+
+
+
 // When the relevant button is clicked this function adds an additional input and output field for emails.
 // If the user has more than one email address they can now add and display multiple email addresses on their CV.
 function addNewEmailInput() {
@@ -184,6 +289,40 @@ function saveCV() {
     "newPhoneNumberOutputLocalStorage",
     newPhoneNumberOutput.innerHTML
   );
+
+
+  localStorage.setItem("jobTitle1InputLocalStorage", jobTitle1Input.innerHTML);
+  localStorage.setItem("jobDuties1InputLocalStorage", jobDuties1Input.innerHTML);
+  localStorage.setItem("jobTitle2InputLocalStorage", jobTitle2Input.innerHTML);
+  localStorage.setItem("jobDuties2InputLocalStorage", jobDuties2Input.innerHTML);
+
+  localStorage.setItem("jobTitle1OutputLocalStorage", jobTitle1Output.innerHTML);
+  localStorage.setItem("jobDuties1OutputLocalStorage", jobDuties1Output.innerHTML);
+  localStorage.setItem("jobTitle2OutputLocalStorage", jobTitle2Output.innerHTML);
+  localStorage.setItem("jobDuties2OutputLocalStorage", jobDuties2Output.innerHTML);
+
+  localStorage.setItem("educationLevel1InputLocalStorage", educationLevel1Input.innerHTML);
+  localStorage.setItem("educationResults1InputLocalStorage", educationResults1Input.innerHTML);
+  localStorage.setItem("educationLocation1InputLocalStorage", educationLocation1Input.innerHTML);
+  localStorage.setItem("educationDates1InputLocalStorage", educationDates1Input.innerHTML);
+  localStorage.setItem("educationLevel2InputLocalStorage", educationLevel2Input.innerHTML);
+  localStorage.setItem("educationResults2InputLocalStorage", educationResults2Input.innerHTML);
+  localStorage.setItem("educationLocation2InputLocalStorage", educationLocation2Input.innerHTML);
+  localStorage.setItem("educationDates2InputLocalStorage", educationDates2Input.innerHTML);
+
+  localStorage.setItem("educationLevel1OutputLocalStorage", educationLevel1Output.innerHTML);
+  localStorage.setItem("educationResults1OutputLocalStorage", educationResults1Output.innerHTML);
+  localStorage.setItem("educationLocation1OutputLocalStorage", educationLocation1Output.innerHTML);
+  localStorage.setItem("educationDates1OutputLocalStorage", educationDates1Output.innerHTML);
+  localStorage.setItem("educationLevel2OutputLocalStorage", educationLevel2Output.innerHTML);
+  localStorage.setItem("educationResults2OutputLocalStorage", educationResults2Output.innerHTML);
+  localStorage.setItem("educationLocation2OutputLocalStorage", educationLocation2Output.innerHTML);
+  localStorage.setItem("educationDates2OutputLocalStorage", educationDates2Output.innerHTML);
+
+  localStorage.setItem("personalProfileDescriptionInputLocalStorage", personalProfileDescriptionInput.innerHTML);
+
+  localStorage.setItem("personalProfileDescriptionOutputLocalStorage", personalProfileDescriptionOutput.innerHTML);
+  
 }
 
 // Input fields are loaded from localStorage on page load.
@@ -220,6 +359,46 @@ window.addEventListener("load", () => {
   document.getElementById("newPhoneNumberOutput").innerHTML =
     localStorage.getItem("newPhoneNumberOutputLocalStorage") || "Phone Number";
 });
+
+
+window.addEventListener("load", () => {
+  jobTitle1Input.value = localStorage.getItem("jobTitle1InputLocalStorage") || "";
+  jobDuties1Input.value = localStorage.getItem("jobDuties1InputLocalStorage") || "";
+  jobTitle2Input.value = localStorage.getItem("jobTitle2InputLocalStorage") || "";
+  jobDuties2Input.value = localStorage.getItem("jobDuties2InputLocalStorage") || "";
+
+  educationLevel1Input.value = localStorage.getItem("educationLevel1InputLocalStorage") || "";
+  educationResults1Input.value = localStorage.getItem("educationResults1InputLocalStorage") || "";
+  educationLocation1Input.value = localStorage.getItem("educationLocation1InputLocalStorage") || "";
+  educationDates1Input.value = localStorage.getItem("educationDates1InputLocalStorage") || "";
+  educationLevel2Input.value = localStorage.getItem("educationLevel2InputLocalStorage") || "";
+  educationResults2Input.value = localStorage.getItem("educationResults2InputLocalStorage") || "";
+  educationLocation2Input.value = localStorage.getItem("educationLocation2InputLocalStorage") || "";
+  educationDates2Input.value = localStorage.getItem("educationDates2InputLocalStorage") || "";
+
+  personalProfileDescriptionInput.value = localStorage.getItem("personalProfileDescriptionInputLocalStorage") || "";
+});
+
+window.addEventListener("load", () => {
+  document.getElementById("fnameOutput").innerHTML = localStorage.getItem("fnameOutputLocalStorage") || "First Name";
+
+  document.getElementById("jobTitle1Output").innerHTML = localStorage.getItem("jobTitle1OutputLocalStorage") || "Job Title";
+  document.getElementById("jobDuties1Output").innerHTML = localStorage.getItem("jobDuties1OutputLocalStorage") || "Duties";
+  document.getElementById("jobTitle2Output").innerHTML = localStorage.getItem("jobTitle2OutputLocalStorage") || "";
+  document.getElementById("jobDuties2Output").innerHTML = localStorage.getItem("jobDuties2OutputLocalStorage") || "";
+
+  document.getElementById("educationLevel1Output").innerHTML = localStorage.getItem("educationLevel1OutputLocalStorage") || "Education Level";
+  document.getElementById("educationResults1Output").innerHTML = localStorage.getItem("educationResults1OutputLocalStorage") || "Results";
+  document.getElementById("educationLocation1Output").innerHTML = localStorage.getItem("educationLocation1OutputLocalStorage") || "Institution";
+  document.getElementById("educationDates1Output").innerHTML = localStorage.getItem("educationDates1OutputLocalStorage") || "Dates";
+  document.getElementById("educationLevel2Output").innerHTML = localStorage.getItem("educationLevel2OutputLocalStorage") || "";
+  document.getElementById("educationResults2Output").innerHTML = localStorage.getItem("educationResults2OutputLocalStorage") || "";
+  document.getElementById("educationLocation2Output").innerHTML = localStorage.getItem("educationLocation2OutputLocalStorage") || "";
+  document.getElementById("educationDates2Output").innerHTML = localStorage.getItem("educationDates2OutputLocalStorage") || "";
+
+  document.getElementById("personalProfileDescriptionOutput").innerHTML = localStorage.getItem("personalProfileDescriptionOutputLocalStorage") || "Description";
+});
+
 
 // if statements which checks if there is data stored in local storage.
 // If localstorage is not empty then it creates and populates the additional email and phone number fields.
@@ -307,103 +486,3 @@ function clearLocalStorage() {
 // Use onchange or onblur.
 // Class with a constructor.
 // Investigate object oriented programming. But time box it. And create a branch from your code on gitHub.
-
-let input3 = document.getElementById("submit3");
-input3.addEventListener("click", (e) => {
-  let jobTitle1InputVar = jobTitle1Input.value;
-  let jobDuties1InputVar = jobDuties1Input.value;
-  let jobTitle2InputVar = jobTitle2Input.value;
-  let jobDuties2InputVar = jobDuties2Input.value;
-
-  if (jobTitle1InputVar === "" || jobDuties1InputVar === "") {
-    alert("Please fill in at least one previous role.");
-  } else {
-    let jobTitle1OutputVar = document.getElementById("jobTitle1Output");
-    let jobDuties1OutputVar = document.getElementById("jobDuties1Output");
-    let jobTitle2OutputVar = document.getElementById("jobTitle2Output");
-    let jobDuties2OutputVar = document.getElementById("jobDuties2Output");
-
-    jobTitle1OutputVar.innerHTML = jobTitle1InputVar;
-    jobDuties1OutputVar.innerHTML = jobDuties1InputVar;
-    jobTitle2OutputVar.innerHTML = jobTitle2InputVar;
-    jobDuties2OutputVar.innerHTML = jobDuties2InputVar;
-  }
-});
-
-let input4 = document.getElementById("submit4");
-input4.addEventListener("click", (e) => {
-  let educationLevel1InputVar = educationLevel1Input.value;
-  let educationResults1InputVar = educationResults1Input.value;
-  let educationLocation1InputVar = educationLocation1Input.value;
-  let educationDates1InputVar = educationDates1Input.value;
-  let educationLevel2InputVar = educationLevel2Input.value;
-  let educationResults2InputVar = educationResults2Input.value;
-  let educationLocation2InputVar = educationLocation2Input.value;
-  let educationDates2InputVar = educationDates2Input.value;
-
-  if (
-    educationLevel1InputVar === "" ||
-    educationResults1InputVar === "" ||
-    educationLocation1InputVar === "" ||
-    educationDates1InputVar === ""
-  ) {
-    alert("Please fill in at least one previous education section.");
-  } else {
-    let educationLevel1OutputVar = document.getElementById(
-      "educationLevel1Output"
-    );
-    let educationResults1OutputVar = document.getElementById(
-      "educationResults1Output"
-    );
-    let educationLocation1OutputVar = document.getElementById(
-      "educationLocation1Output"
-    );
-    let educationDates1OutputVar = document.getElementById(
-      "educationDates1Output"
-    );
-    let educationLevel2OutputVar = document.getElementById(
-      "educationLevel2Output"
-    );
-    let educationResults2OutputVar = document.getElementById(
-      "educationResults2Output"
-    );
-    let educationLocation2OutputVar = document.getElementById(
-      "educationLocation2Output"
-    );
-    let educationDates2OutputVar = document.getElementById(
-      "educationDates2Output"
-    );
-
-    educationLevel1OutputVar.innerHTML = educationLevel1InputVar;
-    educationResults1OutputVar.innerHTML = educationResults1InputVar;
-    educationLocation1OutputVar.innerHTML = educationLocation1InputVar;
-    educationDates1OutputVar.innerHTML = educationDates1InputVar;
-    educationLevel2OutputVar.innerHTML = educationLevel2InputVar;
-    educationResults2OutputVar.innerHTML = educationResults2InputVar;
-    educationLocation2OutputVar.innerHTML = educationLocation2InputVar;
-    educationDates2OutputVar.innerHTML = educationDates2InputVar;
-  }
-});
-
-// let input5 = document.getElementById("submit5");
-// input5.addEventListener("click", (e) => {
-//   let personalProfileDescriptionInputVar =
-//     personalProfileDescriptionInput.value;
-
-//   if (personalProfileDescriptionInputVar === "") {
-//     alert("Please add a profile description.");
-//   } else {
-//     let personalProfileDescriptionOutputVar = document.getElementById(
-//       "personalProfileDescriptionOutput"
-//     );
-
-//     personalProfileDescriptionOutputVar.innerHTML =
-//       personalProfileDescriptionInputVar;
-//   }
-// });
-
-let input5 = document.getElementById("submit5");
-input5.addEventListener("click", (e) => {
-  personalProfileDescriptionOutput.innerHTML =
-    personalProfileDescriptionInput.value;
-});
