@@ -195,7 +195,7 @@ function addNewPhoneNumberInput() {
   newPhoneNumberInputLabel.innerHTML = "Phone Number: ";
   const newPhoneNumberInput = document.createElement("input");
   newPhoneNumberInput.name = "newPhoneNumberInput";
-  newPhoneNumberInput.type = "number";
+  newPhoneNumberInput.type = "tel";
   newPhoneNumberInput.className = "newPhoneNumberInput";
   newPhoneNumberInput.id = "newPhoneNumberInput";
 
