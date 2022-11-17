@@ -25,6 +25,8 @@ h1 {
 
 .displayOutputSection {
     border: solid black 1px;
+    padding: 10px;
+    box-shadow: 5px 10px #888888;
 }
 
 .printableArea {
