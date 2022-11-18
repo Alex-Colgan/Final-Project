@@ -7,6 +7,10 @@
     <title>CV Builder</title>
     <script defer src="scripts.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    
   </head>
   <body>
     <h1>CV Builder</h1>
@@ -39,11 +43,11 @@
             <label for="jobTitle1Input">Job Title: </label>
             <input type="text" name="jobTitle1Input" class="jobTitle1Input" id="jobTitle1Input"/>
             <label for="jobDuties1Input">Duties: </label>
-            <input type="text" name="jobDuties1Input" class="jobDuties1Input" id="jobDuties1Input"/>
+            <textarea name="jobDuties1Input" id="jobDuties1Input" form="workExperienceForm" cols="30" rows="10"></textarea>
             <label for="jobTitle2Input">Job Title: </label>
             <input type="text" name="jobTitle2Input" class="jobTitle2Input" id="jobTitle2Input"/>
             <label for="jobDuties2Input">Duties: </label>
-            <input type="text" name="jobDuties2Input" class="jobDuties2Input" id="jobDuties2Input"/>
+            <textarea name="jobDuties2Input" id="jobDuties2Input" form="workExperienceForm" cols="30" rows="10"></textarea>
             <button type="button" class="submit3" id="submit3">Submit</button>
           </form>
         </div>
@@ -71,13 +75,13 @@
         <div class="personalProfileFormSection" id="personalProfileFormSection">
           <form action="" method="" class="personalProfileForm" id="personalProfileForm">
             <label for="personalProfileDescriptionInput">Description: </label>
-            <input type="text" name="personalProfileDescriptionInput" class="personalProfileDescriptionInput" id="personalProfileDescriptionInput"/>
+            <textarea name="personalProfileDescriptionInput" id="personalProfileDescriptionInput" form="personalProfileForm" cols="30" rows="10"></textarea>
             <button type="button" class="submit5" id="submit5">Submit</button>
           </form>
         </div>
       </div>
       <div class="displaySection" id="displaySection">
-        <h2>Your CV will be displayed here:</h2>
+        <h2 class="displaySectionTitle" id="displaySectionTitle">Your CV will be displayed here:</h2>
         <div class="displayOutputSection" id="displayOutputSection">
           <div class="printableArea" id="printableArea">
             <h3>Curriculum Vitae</h3>
@@ -114,9 +118,9 @@
             </div>
           </div>
         </div>
-        <input type="button" onclick="printDiv('printableArea')" value="Print CV"/>
-        <input type="button" onclick="saveCV()" value="Save CV"/>
-        <input type="button" onclick="clearLocalStorage()" value="Delete Save Data"/>
+        <button type="button" onclick="saveCV()">Save CV</button>
+        <button type="button" onclick="clearLocalStorage()">Delete Save Data</button>
+        <button type="button" onclick="printDiv('printableArea')">Print CV</button>
       </div>
     </div>
   </body>

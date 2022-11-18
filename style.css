@@ -4,22 +4,12 @@
     justify-content: space-evenly;
 }
 
-.personalInformationForm {
+.personalInformationForm, .workExperienceForm, .educationForm, .personalProfileForm {
     display: flex;
     flex-direction: column;
 }
 
-.workExperienceForm {
-    display: flex;
-    flex-direction: column;
-}
-
-.educationForm {
-    display: flex;
-    flex-direction: column;
-}
-
-h1 {
+h1, h3 {
     text-align: center;
 }
 
@@ -27,14 +17,62 @@ h1 {
     border: solid black 1px;
     padding: 10px;
     box-shadow: 5px 10px #888888;
+    margin-bottom: 4vh;
 }
 
 .printableArea {
     margin: 3vh;
+    max-width: 40vw;
+}
+
+p {
+    width: auto;
+}
+
+.formSection, .displaySectionTitle, h1, button{
+    font-family: 'Open Sans', sans-serif;
+}
+
+input {
+    padding: 5px 5px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 2px grey;
+}
+
+textarea {
+    padding: 8px 8px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 2px grey;
+    resize: none;
+}
+
+button {
+    padding: 5px 5px;
+    margin: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    appearance:none;
+    -webkit-appearance:none;
+    border:none;
+    background-color:#4292b5;
+    color:#fff;
+    font-weight:600;
+    border-radius:5px;
+    width:100%;
 }
 
 @media only screen and (max-width: 600px) {
     .wrapper {
         flex-direction: column;
+    }
+
+    .printableArea {
+        max-width: max-content;
     }
 }
