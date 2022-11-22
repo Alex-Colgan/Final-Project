@@ -28,18 +28,12 @@ Email Address
 Phone Number
 -Add JavaScript to enable the results of our form to display.
 
+Submit buttons use event listeners which take the values of the form fields and asigns them to the inner HTML of the CV elements.
+
 
 ## Plus Button
 
-Explore options in Javascript.
-First attempted .clone(true).
-Decided instead to create new elements.
-Many searches suggested using jquery. However I have decided not to use any libraries in order to show my understanding of all the concepts in this project.
-
-Current bugs:
--addNewEmailInput button does not work if it is placed within the form.
--additional email inputs do not display if there is text in the original field. (Fixed).
--
+Buttons create the new HTML elements using Javascript.
 
 ## Print Button
 
@@ -47,16 +41,10 @@ Created a 'printable area' <div> which encompassed the CV output and used javasc
 
 ## Save CV Button
 
-Am currently investigating localStorage usage. Trying to find a way to save lots of information without having to write several Javascript lines and functions for every user input. Will persevere with this method if necessary.
-
-Currently all objects retrieve from local storage on change and on load. Will need to update this so that it works with a button.
-
-Updates to this file Needed!
-
-Current bugs:
--More than one additional email or phone number is not saved correctly to local storage and displays as undefined on page load.
-
-For restoring user info, could remove page load functionality and instead use a button. 
+Used local storage and an event listener to load data from local storage on page load.
 
 ## Styles
 
+Added media queries to allow use with smaller width devices.
+Added CSS to ensure the text formatting remains consistent.
+Styled the CV output to give the effect of a paper page lifted off the webpage.
